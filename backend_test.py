@@ -105,7 +105,7 @@ class BirthdayClubAPITester:
             "email_address": f"profile_{timestamp}@example.com",
             "employment_title": "Software Engineer",
             "phone_number": f"+1555{timestamp}",
-            "birthday_date": "1990-01-15",
+            "birthday_date": "1990-01-15",  # Send as string
             "favorite_bistro_food_items": "Pasta, Pizza",
             "preferred_bistro_beverage": "Wine",
             "interest_in_group_private_package": "both",
