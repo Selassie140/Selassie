@@ -68,7 +68,7 @@ class BirthdayClubAPITester:
             "name": f"Test Customer {customer_type} {timestamp}",
             "phone_number": f"+1555{timestamp}",
             "email": f"test_{customer_type}_{timestamp}@example.com",
-            "date_of_birth": "1990-01-15",
+            "date_of_birth": "1990-01-15",  # Send as string
             "customer_type": customer_type
         }
         
