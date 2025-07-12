@@ -136,7 +136,7 @@ async def customer_signup(customer: CustomerSignup):
             "name": customer.name,
             "email": customer.email,
             "phone_number": customer.phone_number,
-            "date_of_birth": customer.date_of_birth,
+            "date_of_birth": customer.date_of_birth.isoformat(),  # Convert to string
             "profile_completed": False,
             "created_at": datetime.utcnow(),
             "updated_at": datetime.utcnow()
