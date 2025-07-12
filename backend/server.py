@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List
 from datetime import datetime, date
+import json
 from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import uuid
