@@ -187,7 +187,10 @@ async def complete_customer_profile(account_number: str, profile: CustomerProfil
         if result.modified_count:
             # Return updated customer
             updated_customer = await db.customers.find_one({"account_number": account_number})
-            return CustomerResponse(**updated_customer)
+            if updated_customer:
+                return CustomerResponse(**updated_customer)
+            else:
+                raise HTTPException(status_code=500, detail="Failed to retrieve updated customer")
         else:
             raise HTTPException(status_code=500, detail="Failed to update customer profile")
             
