@@ -174,6 +174,9 @@ async def complete_customer_profile(account_number: str, profile: CustomerProfil
         profile_data["customer_profile_number"] = profile_number
         profile_data["profile_completed"] = True
         profile_data["updated_at"] = datetime.utcnow()
+        # Convert date to string for MongoDB
+        if "birthday_date" in profile_data:
+            profile_data["birthday_date"] = profile_data["birthday_date"].isoformat()
         
         # Update database
         result = await db.customers.update_one(
